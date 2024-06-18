@@ -2,7 +2,7 @@ import pLimit from '@esm2cjs/p-limit';
 
 const wait = (t: number) => new Promise((r) => setTimeout(r, t));
 
-export async function allEach<Item extends any, Result extends any>(
+export default async function allEach<Item extends any, Result extends any>(
   limiter: number | ReturnType<typeof pLimit>,
   arr: Item[],
   callback: (item: Item, idx: number) => Promise<Result>,
